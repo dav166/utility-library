@@ -1,6 +1,7 @@
 class _ {
 
-    // Array Methods
+// Array Methods //
+
     static chunk(array, size=1){
         let newArray = [];
         for (let i = 0; i <array.length; i += size){
@@ -68,6 +69,51 @@ class _ {
         }
         return new Set(total);
     }
+
+// Collection Methods //
+
+    static filter(collection, predicate){
+        return collection.filter(predicate);
+    }
+
+    static find(collection, predicate, fromIndex=0){
+        let ans = collection.slice(fromIndex, collection.length)
+        return ans.find(predicate);
+    }
+
+    static partition(collection, predicate){
+        let truthy = array.filter(predicate);
+        let falsy = collection;
+        
+        for(let i of truthy){
+            let n = falsy.indexOf(i)
+            falsy.splice(n, 1); 
+        } 
+        
+        return [truthy, falsy];
+    }
+
+    static shuffle(collection){
+        function sh(array=collection, shuffled=[], length=collection.length){
+                if(length === 0){
+                    return shuffled;
+                }
+
+                let rand = Math.floor( Math.random() * ( length - 1) );
+                
+                shuffled.push( array[rand] )
+                
+                length -= 1;
+                
+                array.splice(rand, 1);
+                
+                return sh(array, shuffled, length);
+                    
+        }
+        return sh() 
+              
+    }
+    
 }
 
 
