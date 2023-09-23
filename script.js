@@ -113,6 +113,31 @@ class _ {
         return sh() 
               
     }
+
+// Math Methods //
+
+    static mean(array){
+        let sum = array.reduce( (accumulator, current) => {
+            return accumulator + current
+        }, 0);
+        return sum/array.length;
+    }
+
+    static max(array){
+        return Math.max(...array)
+    }
+
+    static min(array){
+        return Math.min(...array)
+    }
+
+    static sum(array){
+        let total = array.reduce( (accumulator, current) => {
+            return accumulator + current
+        }, 0);
+        return total;
+    }
+
     
 }
 
