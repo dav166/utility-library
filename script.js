@@ -138,7 +138,15 @@ class _ {
         return total;
     }
 
-    
+// Object Methods //
+
+    static keys(object){
+        return Object.keys(object)
+    }
+
+    static values(){
+        return Object.values(object)
+    }
 }
 
 
