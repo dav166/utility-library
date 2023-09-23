@@ -147,6 +147,31 @@ class _ {
     static values(){
         return Object.values(object)
     }
+
+// String Methods //
+
+    static repeat(string='', n=1){
+        let repeated ='';
+                
+        for(let i = 0; i < n; i++){
+            repeated += string;
+        }
+        return repeated;
+    } 
+
+    static split(string='', separator, limit){
+        let spl = string.split(separator);
+        let limited = [];
+                    
+        if (limit === undefined){
+            return spl;
+        } else {
+            for(let i=0; i<limit; i++){
+                limited.push(spl[i])
+            }
+            return limited    
+        }
+    }
 }
 
 
